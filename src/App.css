@@ -1,0 +1,260 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to bottom, #f0f4f8, #d9e2ec); /* Δημιουργία gradient φόντου */
+}
+
+/* General Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2f3e46;
+}
+
+/* Form Container */
+.form-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  max-width: 450px;
+  transition: transform 0.3s ease; /* Προσθήκη εφέ κατά την αλληλεπίδραση */
+}
+
+.form-container:hover {
+  transform: translateY(-3px); /* Εφέ ανύψωσης κατά το hover */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007bff; /* Προσαρμογή χρώματος border κατά το focus */
+}
+
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #007bff, #0056b3); /* Gradient background */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease; /* Προσθήκη εφέ στο background */
+}
+
+.submit-button:hover {
+  background: linear-gradient(to right, #0056b3, #00449e);
+}
+
+button.toggle-button {
+  margin-top: 20px;
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: text-decoration 0.3s ease;
+}
+
+button.toggle-button:hover {
+  text-decoration: underline; /* Προσθήκη υπογράμμισης στο hover */
+}
+
+.error {
+  color: #e63946;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* Restaurant Cards */
+.restaurant-card {
+  background-color: #fff;
+  padding: 24px;
+  margin: 20px 0;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 420px;
+  width: 100%;
+  transition: transform 0.3s;
+}
+.restaurants-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+
+
+
+restaurant-card:hover {
+  transform: translateY(-5px); /* Εφέ ανύψωσης κατά το hover */
+}
+
+.restaurant-card h2 {
+  margin: 10px 0;
+  font-size: 1.6rem;
+  color: #2f3e46;
+}
+
+.restaurant-card p {
+  font-size: 1.1rem;
+  color: #6c757d;
+}
+.restaurant-button {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+}
+
+.restaurant-button.selected {
+  background-color: lightblue;
+  font-weight: bold;
+}
+
+
+
+.restaurant-card button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.restaurant-card button:hover {
+  background-color: #218838;
+}
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.3s ease-in-out;
+}
+
+.modal-content h3 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #2f3e46;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #0056b3;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .app-container {
+    padding: 15px;
+  }
+
+  .form-container,
+  .restaurant-card,
+  .modal-content {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+.logout-button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}

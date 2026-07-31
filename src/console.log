@@ -1,0 +1,15 @@
+const handleLogin = async (e) => {
+    e.preventDefault();
+    console.log('Sending login request with email:', email, 'and password:', password);  // Καταγράφει τα δεδομένα του login
+
+    try {
+        const response = await axios.post('http://localhost:3000/login', { email, password });
+
+        // Καταγράφει το response του server
+        console.log('Login successful, received response:', response);
+        setToken(response.data.token);  // Αποθήκευση του JWT token
+    } catch (err) {
+        console.error('Login error:', err);  // Καταγράφει το σφάλμα
+        setError('Λάθος email ή password');
+    }
+};
